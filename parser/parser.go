@@ -41,7 +41,7 @@ func (p *parser) parse() {
 		switch tok {
 		case TYPEDEF:
 			ty := p.typedef()
-			p.file.Types[ty.Name] = ty
+			p.file.AddType(ty.Name(), ty)
 			continue
 		case COMMENT:
 		case EOF:
@@ -65,7 +65,7 @@ func (p *parser) typedef() *syntax.Typedef {
 	name := p.ident()
 	//log.Printf("typdef: %s", name)
 	p.expect(SEMICOLON)
-	return &syntax.Typedef{Name: name, Type: typ}
+	return syntax.NewTypedef(name, typ)
 }
 
 func (p *parser) number() int {
@@ -124,7 +124,7 @@ func (p *parser) structType() *syntax.Struct {
 		//log.Printf("%s end field %s", p.pos, p.tok)
 	}
 	p.expect(RBRACE)
-	return &syntax.Struct{Name: name, Fields: fields}
+	return syntax.NewStruct(name, fields)
 }
 
 func (p *parser) ident() string {
