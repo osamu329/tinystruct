@@ -36,12 +36,13 @@ type parser struct {
 }
 
 func (p *parser) parse() {
+	tok := p.scan()
 	for p.tok != EOF {
-		tok := p.scan()
 		switch tok {
 		case TYPEDEF:
 			ty := p.typedef()
 			p.file.Types[ty.Name] = ty
+			continue
 		case COMMENT:
 		case EOF:
 			log.Printf("EOF")
@@ -50,6 +51,7 @@ func (p *parser) parse() {
 			log.Printf("%s %s %s", p.pos, tok, p.lit)
 			return
 		}
+		tok = p.scan()
 	}
 }
 
