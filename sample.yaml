@@ -1,0 +1,9 @@
+---
+data:
+  - answer_hoge_t:
+      broadcast_type:
+        central_module_c: 'U'
+        server_type_c: 'Q'
+        transaction_type_n: 15
+      name_s: "abc"
+

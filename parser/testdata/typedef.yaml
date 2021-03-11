@@ -1,0 +1,39 @@
+# vim: set sw=2
+---
+version: 1
+typedefs:
+  - struct:
+      name: broadcast_type_t
+      fields:
+        central_module_c: char
+        server_type_c: char
+        transaction_number_n: uint16_t
+  - struct:
+      name: broadcast_hdr_t
+      fields:
+        broadcast_type: broadcast_type_t
+        items_n: uint16_t
+      attributes:
+        has_vim_item: true
+  - struct:
+      name : hoge_answer_item_t
+      fields:
+        name_s: char[20]
+        filler_s: char[4]
+  - struct:
+      name : hoge_answer_t
+      fields:
+        items_n: uint16_t
+        item: hoge_answer_t[100]
+      attributes:
+        item_field: item
+        item_count_field: items_n
+        
+
+
+
+  
+  
+
+
+

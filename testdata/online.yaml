@@ -1,0 +1,7 @@
+---
+- answer_hoge_t: {broadcast_type: {central_module_c: B, server_type_c: O, transaction_number_n: 16}, name_s: abc}
+- answer_hoge_t: {broadcast_type: "BO16", name_s: abc}
+- answer_hoge_t: {broadcast_type: "BO16", items:[
+    sub_item_t:[ns1:{}, n2:{}],
+    sub_item_t:[ns1:{}, n2:{}],
+  ]}

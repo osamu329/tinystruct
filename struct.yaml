@@ -1,0 +1,18 @@
+# vim: set sw=2
+---
+version: 1
+typedefs:
+  answer_hoge_t:
+    broadcast_type: broadcast_type_t
+    name_s: char[4]
+
+#  struct:
+#    name: broadcast_hdr_t
+#    fields:
+#      broadcast_type: broadcast_type_t
+#      items_n: uin16_t
+#    attributes:
+#      has_vim_item: true
+  
+  
+
